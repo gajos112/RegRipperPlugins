@@ -16,5 +16,5 @@ Curent list of plugins:
 - valuesizechecker.pl
 
 
-
+</br>
 RegRipper tool can be found here: https://github.com/keydet89/RegRipper3.0
