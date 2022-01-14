@@ -6,12 +6,12 @@ Curent list of plugins:
 
 - updateshistory.pl - SYSTEM hive (example below)
 
-![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/updateshistory_plugin.JPG?raw=true)
+  ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/updateshistory_plugin.JPG?raw=true)
 
 
 - packageshistory.pl - SOFTWARE hive (example below)
 
-![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/packageshistory_plugin.JPG?raw=true)
+  ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/packageshistory_plugin.JPG?raw=true)
 
 - valuesizechecker.pl
 
