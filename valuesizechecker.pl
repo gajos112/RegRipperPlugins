@@ -51,8 +51,6 @@ sub pluginmain {
 	
 	my $key_path = "Software\\Microsoft\\" . $subKeyName;  
 	
-
-	
 	if ($key = $root_key->get_subkey($key_path)) {
 		::rptMsg("Checking " .$key_path);
 		::rptMsg("LastWrite Time ".::getDateFromEpoch($key->get_timestamp())." (UTC)");
@@ -80,5 +78,4 @@ sub pluginmain {
 		::rptMsg($key_path." not found\.");
 	}
 }
-
 1;
