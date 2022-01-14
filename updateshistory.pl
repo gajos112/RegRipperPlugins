@@ -88,9 +88,9 @@ sub pluginmain {
 										::rptMsg("	 - " . $value_name . ": " .$data );
 									}
 									
-									if (index($value_name,"InstallTime") != -1){
-										::rptMsg("	 - " . $value_name . ": " . $data );
-									}
+									#if (index($value_name,"InstallTime") != -1){
+									#	::rptMsg("	 - " . $value_name . ": " . $data );
+									#}
 									
 									if (index($value_name,"ProductName") != -1){
 										::rptMsg("	 - " . $value_name . ": " .$data );
