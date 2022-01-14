@@ -4,11 +4,13 @@ In this repository you can find all RegRipper plugins that I have created. We en
 
 Curent list of plugins:
 
-- updateshistory.pl
+- updateshistory.pl (SYSTEM)
+- 
 ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/updateshistory_plugin.JPG?raw=true)
 
 
-- packageshistory.pl
+- packageshistory.pl (SOFTWARE)
+
 ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/packageshistory_plugin.JPG?raw=true)
 
 - valuesizechecker.pl
