@@ -12,6 +12,11 @@ Curent list of plugins:
 - packageshistory.pl - SOFTWARE hive (example below)
 
   ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/packageshistory_plugin.JPG?raw=true)
+  
+ - idmhistory.pl - NTUSER.DAT
+
+ - idmhistory_tln.pl - NTUSER.DAT
+
 
 - valuesizechecker.pl
 
