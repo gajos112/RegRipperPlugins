@@ -16,7 +16,7 @@ Curent list of plugins:
   
  - idmhistory.pl - NTUSER.DAT  (example below)
  
-   ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/updateshistory_plugin.JPG?raw=true)
+   ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/idmhistory_plugin.JPG.JPG?raw=true)
 
 
  - idmhistory_tln.pl - NTUSER.DAT
