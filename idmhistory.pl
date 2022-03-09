@@ -1,6 +1,6 @@
 #! c:\perl\bin\perl.exe
 #-----------------------------------------------------------
-# IDMHistory.pl
+# idmhistory.pl
 # Plugin for Registry Ripper, NTUSER.DAT 
 # IDM - downloaded files
 #
