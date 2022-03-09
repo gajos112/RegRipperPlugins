@@ -21,6 +21,9 @@ Curent list of plugins:
 
  - idmhistory_tln.pl - NTUSER.DAT
 
+   ![alt text](https://github.com/gajos112/RegRipperPlugins/blob/main/Images/idmhistory_tln_plugin.JPG?raw=true)
+
+
 
 - valuesizechecker.pl
 
