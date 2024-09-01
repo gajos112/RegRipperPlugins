@@ -41,13 +41,12 @@ sub reverse_endian {
 
 sub bytes_to_guid {
     my ($byte_string) = @_;
-    
     my $guid = join('-', 
         reverse_endian(substr($byte_string, 0, 8)),
         reverse_endian(substr($byte_string, 8, 4)),
         reverse_endian(substr($byte_string, 12, 4)),
-        reverse_endian(substr($byte_string, 16, 4)),
-        reverse_endian(substr($byte_string, 20, 12))
+        (substr($byte_string, 16, 4)),
+        (substr($byte_string, 20, 12))
     );
     
     return $guid;
@@ -96,10 +95,9 @@ sub pluginmain {
 						elsif (index($value_name,"CurrentVirtualDesktop") != -1){
 							
 							my $data_hex = unpack('H*', $data);
-						
-						my $max_length = 16 * 2; 
-						my $current_position = 0;
-						my $virtual_desktop_number = 1;
+							my $max_length = 16 * 2; 
+							my $current_position = 0;
+							my $virtual_desktop_number = 1;
 
 						while ($current_position < length($data_hex)) {
 							my $line_data = substr($data_hex, $current_position, $max_length);
