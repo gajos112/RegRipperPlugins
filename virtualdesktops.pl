@@ -2,7 +2,7 @@
 #-----------------------------------------------------------
 # virtualdesktops.pl
 # Plugin for Registry Ripper, NTUSER.DAT 
-# Fake Forum Infection 
+# Virtual Desktops 
 #
 # Change history
 # 20240901 - (2024-09-01) Creation of the plugin
@@ -27,27 +27,21 @@ sub getShortDescr {
 sub getDescr{}
 sub getHive {return $config{hive};}
 sub getVersion {return $config{version};}
-
 my $VERSION = getVersion();
 
 sub reverse_endian {
     my ($little_endian_string) = @_;
-    
     my $big_endian_string;
     
     for (my $i = 0; $i < length($little_endian_string); $i += 2) {
         $big_endian_string = substr($little_endian_string, $i, 2) . $big_endian_string;
     }
-    
     return $big_endian_string;
 }
-
 
 sub bytes_to_guid {
     my ($byte_string) = @_;
     
-    #die "Invalid byte string length" unless length($byte_string) == 32;
-
     my $guid = join('-', 
         reverse_endian(substr($byte_string, 0, 8)),
         reverse_endian(substr($byte_string, 8, 4)),
@@ -58,7 +52,6 @@ sub bytes_to_guid {
     
     return $guid;
 }
-
 
 sub pluginmain {
 	
@@ -93,7 +86,6 @@ sub pluginmain {
 
 							while ($current_position < length($data_hex)) {
 								my $line_data = substr($data_hex, $current_position, $max_length);
-								#::rptMsg("Virtual Desktop $virtual_desktop_number: " . $line_data);
 								$current_position += $max_length;
 
 								my $guid = bytes_to_guid($line_data);
@@ -111,7 +103,6 @@ sub pluginmain {
 
 						while ($current_position < length($data_hex)) {
 							my $line_data = substr($data_hex, $current_position, $max_length);
-							#::rptMsg(" $virtual_desktop_number: " . $line_data);
 							$current_position += $max_length;
 
 							my $guid = bytes_to_guid($line_data);
@@ -121,5 +112,31 @@ sub pluginmain {
 					}
 				}
 			}
-		}	
+		}
+		
+my $KeyToCheck = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VirtualDesktops\\Desktops";
+if ($key = $root_key->get_subkey($KeyToCheck)) {
+	my @subkeys = $key->get_list_of_subkeys();
+			
+			if (scalar(@subkeys) > 0) {
+				::rptMsg("");
+				::rptMsg("Details for all found Virtual Desktops:");
+				foreach my $s (@subkeys) { 
+				
+					my $lw = $s->get_timestamp();
+					my $str = $s->get_name();
+					::rptMsg(::getDateFromEpoch($lw) . ": " .$str );
+						my @vals = $s->get_list_of_values();
+							if (scalar(@vals) > 0) {
+								foreach my $v (@vals) {
+									my $value_name = $v->get_name();									
+									my $data = $v->get_data();
+									::rptMsg("   " . $value_name . ": " .$data );
+								}
+								::rptMsg("")
+							}
+				}
+			}
+	}
+									
 }
